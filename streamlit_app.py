@@ -11,7 +11,8 @@ import streamlit.components.v1 as components
 
 st.title("🎈 Projet 1 Examen DC ")
 st.write(
-    "Permet de scraper les données directement depuis l'application ou de télécharger des données préscrapées et nettoyées."
+    "Permet de scraper les données directement depuis l'application ou de télécharger des données préscrapées et nettoyées." \
+    "Conçu par Dodzi AHNERT"
 )
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
