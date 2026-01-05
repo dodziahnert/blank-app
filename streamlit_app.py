@@ -3,8 +3,8 @@ import pandas as pd
 from bs4 import BeautifulSoup as bs
 from requests import get
 import base64
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
@@ -173,7 +173,7 @@ def load_lien3(mul_page):
     url3 = "https://dakar-auto.com/senegal/location-de-voitures-19"
     df = pd.DataFrame()
 
-    for index_page in range(1,10): #9+1
+    for index_page in range(1,int(mul_page)+1): #9+1
         url = f'https://dakar-auto.com/senegal/location-de-voitures-19?&page={index_page}'
         res =get(url)
         soup = bs(res.content, 'html.parser')
