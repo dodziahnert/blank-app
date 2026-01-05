@@ -244,10 +244,31 @@ elif Choix == "Dashboard":
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.subheader("Distribution des voitures par année")
-        fig1, ax1 = plt.subplots(figsize=(10,6))
+        #st.subheader("Distribution des voitures par année")
+        st.write("Lien 1")
+        fig1, ax1 = plt.subplots(figsize=(20,12))
         ax1.hist(lien1['annee'], bins=20, color='skyblue', edgecolor='black')
         ax1.set_title("Distribution des voitures par année")
         ax1.set_xlabel("Année")
         ax1.set_ylabel("Nombre de voitures")
         st.pyplot(fig1)
+
+    with col2:
+        st.subheader("Distribution des voitures par année")
+        st.write("Lien 2")
+        fig2, ax2 = plt.subplots(figsize=(20,12))
+        ax1.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
+        ax1.set_title("Distribution des voitures par année")
+        ax1.set_xlabel("Année")
+        ax1.set_ylabel("Nombre de voitures")
+        st.pyplot(fig2)
+
+    with col3:
+        #st.subheader("Distribution des voitures par année")
+        st.write("Lien 3")
+        fig3, ax3 = plt.subplots(figsize=(20,12))
+        ax1.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
+        ax1.set_title("Distribution des voitures par année")
+        ax1.set_xlabel("Année")
+        ax1.set_ylabel("Nombre de voitures")
+        st.pyplot(fig3)
