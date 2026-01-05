@@ -248,18 +248,18 @@ elif Choix == "Dashboard":
         st.write("Lien 1")
         fig1, ax1 = plt.subplots(figsize=(20,12))
         ax1.hist(lien1['annee'], bins=20, color='skyblue', edgecolor='black')
-        ax1.set_title("Distribution des voitures par année")
+        ax1.set_title("Distribution des vehicules par année")
         ax1.set_xlabel("Année")
-        ax1.set_ylabel("Nombre de voitures")
+        ax1.set_ylabel("Nombre de vehicules")
         st.pyplot(fig1)
 
     with col2:
         st.write("Lien 2")
         fig2, ax2 = plt.subplots(figsize=(20,12))
         ax2.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
-        ax2.set_title("Distribution des voitures par année")
+        ax2.set_title("Distribution des vehicules par année")
         ax2.set_xlabel("Année")
-        ax2.set_ylabel("Nombre de voitures")
+        ax2.set_ylabel("Nombre de vehicules")
         st.pyplot(fig2)
 
     with col3:
@@ -268,19 +268,19 @@ elif Choix == "Dashboard":
         ax3.hist(lien3['annee'], bins=20, color='skyblue', edgecolor='black')
         ax3.set_title("Distribution de véhicules par année")
         ax3.set_xlabel("Année")
-        ax3.set_ylabel("Nombre de voitures")
+        ax3.set_ylabel("Nombre de vehicules")
         st.pyplot(fig3)
     
-    st.subheader("Nombre de voitures par année")
+    st.subheader("Nombre de vehicules par année")
     col4, col5, col6 = st.columns(3)
     with col4:
         st.write("Lien 1")
         voitures_par_annee = lien1['annee'].value_counts().sort_index()
         fig4, ax4 = plt.subplots(figsize=(20,12))
         voitures_par_annee.plot(kind='bar', color='orange', ax=ax4)
-        ax4.set_title("Nombre de voitures par année")
+        ax4.set_title("Nombre de vehicules par année")
         ax4.set_xlabel("Année")
-        ax4.set_ylabel("Nombre de voitures")
+        ax4.set_ylabel("Nombre de vehicules")
         st.pyplot(fig4)
 
     with col5:
@@ -290,7 +290,7 @@ elif Choix == "Dashboard":
         voitures_par_annee.plot(kind='bar', color='orange', ax=ax5)
         ax5.set_title("Nombre de véhicules par année")
         ax5.set_xlabel("Année")
-        ax5.set_ylabel("Nombre de voitures")
+        ax5.set_ylabel("Nombre de vehicules")
         st.pyplot(fig5)
 
     with col6:
@@ -298,9 +298,9 @@ elif Choix == "Dashboard":
         voitures_par_annee = lien3['annee'].value_counts().sort_index()
         fig6, ax6 = plt.subplots(figsize=(20,12))
         voitures_par_annee.plot(kind='bar', color='orange', ax=ax6)
-        ax6.set_title("Nombre de voitures par année")
+        ax6.set_title("Nombre de vehicules par année")
         ax6.set_xlabel("Année")
-        ax6.set_ylabel("Nombre de voitures")
+        ax6.set_ylabel("Nombre de vehicules")
         st.pyplot(fig6)
     st.subheader("prix moyen des véhicules par année")
     col7, col8, col9 = st.columns(3)
@@ -309,7 +309,7 @@ elif Choix == "Dashboard":
         prix_moyen_par_annee = lien1.groupby('annee')['prix'].mean()
         fig7, ax7 = plt.subplots(figsize=(12,6))
         prix_moyen_par_annee.plot(kind='line', marker='o', color='green', ax=ax7)
-        ax7.set_title("Évolution du prix moyen des voitures par année")
+        ax7.set_title("Évolution du prix moyen des vehicules par année")
         ax7.set_xlabel("Année")
         ax7.set_ylabel("Prix moyen (FCFA)")
         ax7.grid(True)
@@ -319,7 +319,7 @@ elif Choix == "Dashboard":
         prix_moyen_par_annee = lien2.groupby('annee')['prix'].mean()
         fig8, ax8 = plt.subplots(figsize=(12,6))
         prix_moyen_par_annee.plot(kind='line', marker='o', color='green', ax=ax8)
-        ax8.set_title("Évolution du prix moyen des voitures par année")
+        ax8.set_title("Évolution du prix moyen des vehicules par année")
         ax8.set_xlabel("Année")
         ax8.set_ylabel("Prix moyen (FCFA)")
         ax8.grid(True)
@@ -337,14 +337,20 @@ elif Choix == "Dashboard":
 elif Choix == 'Evaluation de l\'application':
     col1, col2 = st.columns(2)
     with col1:
-           if st.button("Kobo Evaluation Form"):
+           if st.button("formulaire Kobo"):
                 st.markdown(
                     '<meta http-equiv="refresh" content="0; url=https://ee-eu.kobotoolbox.org/x/0yGncAIN">',
                     unsafe_allow_html=True
                 )
+    with col2:
+        if st.button("Google Forms Evaluation"):
+            st.markdown(
+                '<meta http-equiv="refresh" content="0; url=https://docs.google.com/forms/d/e/1FAIpQLSeV9ku8dp5s2GDKYJZZZbri5FJf5upZPMfOyP52EP0UZT3tpg/viewform?usp=publish-editor">',
+                unsafe_allow_html=True
+            )
 
         
 
 
 
-        
+        https://docs.google.com/forms/d/e/1FAIpQLSeV9ku8dp5s2GDKYJZZZbri5FJf5upZPMfOyP52EP0UZT3tpg/viewform?usp=publish-editor
