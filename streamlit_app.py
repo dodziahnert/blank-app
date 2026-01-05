@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup as bs
 from requests import get
 #import matplotlib.pyplot as plt
 #import seaborn as sns
-import beautifulsoup4
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components

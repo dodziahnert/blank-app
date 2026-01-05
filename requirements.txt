@@ -2,7 +2,6 @@ streamlit
 pandas 
 bs4
 requests
-base64
 matplotlib.pyplot
 seaborn 
 numpy 
