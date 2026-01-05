@@ -245,7 +245,6 @@ elif Choix == "Dashboard":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.subheader("")
         st.write("Lien 1")
         fig1, ax1 = plt.subplots(figsize=(20,12))
         ax1.hist(lien1['annee'], bins=20, color='skyblue', edgecolor='black')
@@ -264,7 +263,6 @@ elif Choix == "Dashboard":
         st.pyplot(fig2)
 
     with col3:
-        #st.subheader("Distribution des voitures par année")
         st.write("Lien 3")
         fig3, ax3 = plt.subplots(figsize=(20,12))
         ax3.hist(lien3['annee'], bins=20, color='skyblue', edgecolor='black')
@@ -272,3 +270,35 @@ elif Choix == "Dashboard":
         ax3.set_xlabel("Année")
         ax3.set_ylabel("Nombre de voitures")
         st.pyplot(fig3)
+    st.subheader("Nombre de voitures par année")
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.write("Lien 1")
+        voitures_par_annee = lien1['annee'].value_counts().sort_index()
+        fig4, ax4 = plt.subplots(figsize=(12,6))
+        voitures_par_annee.plot(kind='bar', color='orange', ax=ax4)
+        ax4.set_title("Nombre de voitures par année")
+        ax4.set_xlabel("Année")
+        ax4.set_ylabel("Nombre de voitures")
+        st.pyplot(fig4)
+
+
+    with col5:
+        st.write("Lien 2")
+        voitures_par_annee = lien2['annee'].value_counts().sort_index()
+        fig5, ax5 = plt.subplots(figsize=(12,6))
+        voitures_par_annee.plot(kind='bar', color='orange', ax=ax5)
+        ax5.set_title("Nombre de voitures par année")
+        ax5.set_xlabel("Année")
+        ax5.set_ylabel("Nombre de voitures")
+        st.pyplot(fig5)
+
+    with col6:
+        st.write("Lien 3")
+        voitures_par_annee = lien3['annee'].value_counts().sort_index()
+        fig6, ax6 = plt.subplots(figsize=(12,6))
+        voitures_par_annee.plot(kind='bar', color='orange', ax=ax6)
+        ax6.set_title("Nombre de voitures par année")
+        ax6.set_xlabel("Année")
+        ax6.set_ylabel("Nombre de voitures")
+        st.pyplot(fig6)
