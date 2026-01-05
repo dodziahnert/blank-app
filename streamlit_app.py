@@ -348,9 +348,3 @@ elif Choix == 'Evaluation de l\'application':
                 '<meta http-equiv="refresh" content="0; url=https://docs.google.com/forms/d/e/1FAIpQLSeV9ku8dp5s2GDKYJZZZbri5FJf5upZPMfOyP52EP0UZT3tpg/viewform?usp=publish-editor">',
                 unsafe_allow_html=True
             )
-
-        
-
-
-
-        https://docs.google.com/forms/d/e/1FAIpQLSeV9ku8dp5s2GDKYJZZZbri5FJf5upZPMfOyP52EP0UZT3tpg/viewform?usp=publish-editor
