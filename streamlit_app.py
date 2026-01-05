@@ -220,7 +220,7 @@ def load_lien3(mul_page):
 
 st.sidebar.header('Choix utilisateur')
 Pages = st.sidebar.selectbox('Pages indexes', list([int(p) for p in np.arange(1, 100)]))
-Choix = st.sidebar.selectbox('Options', [ 'Downloader les données précollectées et nettoyées', 'Scraper les données avec BeautifulSoup', 'Dashboard', 'Evaluation de l''application'])
+Choix = st.sidebar.selectbox('Options', [ 'Downloader les données précollectées et nettoyées', 'Scraper les données avec BeautifulSoup', 'Dashboard', 'Evaluation de l\'application'])
 if Choix == 'Scraper les données avec BeautifulSoup':
     lien1_data = load_lien1(Pages)
     lien2_data = load_lien2(Pages)
@@ -329,8 +329,22 @@ elif Choix == "Dashboard":
         prix_moyen_par_annee = lien3.groupby('annee')['prix'].mean()
         fig9, ax9 = plt.subplots(figsize=(12,6))
         prix_moyen_par_annee.plot(kind='line', marker='o', color='green', ax=ax9)
-        ax9.set_title("Évolution du prix moyen des voitures par année")
+        ax9.set_title("Évolution du prix moyen des véhicules par année")
         ax9.set_xlabel("Année")
         ax9.set_ylabel("Prix moyen (FCFA)")
         ax9.grid(True)
         st.pyplot(fig9)
+elif Choix == 'Evaluation de l\'application':
+    col1, col2 = st.columns(2)
+    with col1:
+           if st.button("Kobo Evaluation Form"):
+                st.markdown(
+                    '<meta http-equiv="refresh" content="0; url=https://ee-eu.kobotoolbox.org/x/0yGncAIN">',
+                    unsafe_allow_html=True
+                )
+
+        
+
+
+
+        
