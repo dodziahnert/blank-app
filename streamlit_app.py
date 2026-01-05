@@ -3,7 +3,6 @@ import pandas as pd
 from bs4 import BeautifulSoup as bs
 from requests import get
 import matplotlib.pyplot as plt
-#import seaborn as sns
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
@@ -15,7 +14,6 @@ st.write(
     "Conçu par Dodzi AHNERT"
 )
 def convert_df(df):
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 def load1(dataframe, title, key, key1) :
     # Créer 3 colonnes avec celle du milieu plus large
