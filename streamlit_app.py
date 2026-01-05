@@ -343,7 +343,7 @@ elif Choix == 'Evaluation de l\'application':
                     unsafe_allow_html=True
                 )
     with col2:
-        if st.button("Google Forms Evaluation"):
+        if st.button("Formulaire google forms"):
             st.markdown(
                 '<meta http-equiv="refresh" content="0; url=https://docs.google.com/forms/d/e/1FAIpQLSeV9ku8dp5s2GDKYJZZZbri5FJf5upZPMfOyP52EP0UZT3tpg/viewform?usp=publish-editor">',
                 unsafe_allow_html=True
