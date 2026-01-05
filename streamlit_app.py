@@ -241,8 +241,8 @@ elif Choix == "Dashboard":
     lien1 = pd.read_excel('data/link1_processed.xlsx')
     lien2 = pd.read_excel('data/link2_processed.xlsx')
     lien3 = pd.read_excel('data/link3_processed.xlsx')
-    col1, col2, col3 = st.columns([1, 30, 1])
-
+    col1, col2, col3 = st.columns(3)
+    st.subheader("Distribution des voitures par année")
     with col1:
         st.subheader("")
         st.write("Lien 1")
@@ -254,7 +254,6 @@ elif Choix == "Dashboard":
         st.pyplot(fig1)
 
     with col2:
-        st.subheader("Distribution des voitures par année")
         st.write("Lien 2")
         fig2, ax2 = plt.subplots(figsize=(20,12))
         ax1.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
