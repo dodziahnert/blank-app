@@ -4,6 +4,4 @@ bs4
 requests
 numpy 
 streamlit 
-pandas[excel]
 matplotlib
-Matplotlib.pyplot
