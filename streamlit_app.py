@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from bs4 import BeautifulSoup as bs
 from requests import get
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import seaborn as sns
 import numpy as np
 import streamlit as st
@@ -147,7 +147,9 @@ def load_lien2(mul_page):
                 town = soup_container.find('span','listing-item__address-location').find('span','town-suburb d-inline-block').text
                 province = soup_container.find('span','listing-item__address-location').find('span','province font-weight-bold d-inline-block').text
                 adresse = town + " "+ province
-                adresse = adresse.replace("\n"," ").replace("                          "," ")
+                adresse = adresse.replace("\n","").strip()
+                aad_split = adresse.split()
+                address = " ".join(aad_split)
                 proprietaire = soup_container.find('div','listing-item-sidebar__author text-center').h4.text
                 attributs = soup_container.find_all('li', 'listing-item__attribute list-inline-item')
                 attribut = [attr.get_text(strip=True) for attr in attributs]
@@ -157,7 +159,7 @@ def load_lien2(mul_page):
                     "marque": marque,
                     "annee": annee,
                     "prix": prix,
-                    "adresse": adresse,
+                    "adresse": address,
                     "kilométrage": kilometrage,
                     "proprietaire": proprietaire             
                 }
@@ -191,7 +193,9 @@ def load_lien3(mul_page):
                 town = soup_container.find('span','listing-item__address-location').find('span','town-suburb d-inline-block').text
                 province = soup_container.find('span','listing-item__address-location').find('span','province font-weight-bold d-inline-block').text
                 adresse = town + " "+ province
-                adresse = adresse.replace("\n"," ").replace("                          "," ")
+                adresse = adresse.replace("\n","").strip()
+                aad_split = adresse.split()
+                address = " ".join(aad_split)
                 proprietaire = soup_container.find('div','listing-item-sidebar__author text-center').h4.text
                 attributs = soup_container.find_all('li', 'listing-item__attribute list-inline-item')
                 attribut = [attr.get_text(strip=True) for attr in attributs]
@@ -203,7 +207,7 @@ def load_lien3(mul_page):
                     "marque": marque,
                     "annee": annee,
                     "prix": prix,
-                    "adresse": adresse,
+                    "adresse": address,
                     "proprietaire": proprietaire             
                 }
                 data.append(dic)
@@ -233,3 +237,17 @@ elif Choix == "Downloader les données précollectées et nettoyées":
     load2(lien2,"lien 2: https://dakar-auto.com/senegal/motos-and-scooters-3",'2','102')
     load3(lien3,"lien 3: https://dakar-auto.com/senegal/location-de-voitures-19", '3', '103')
                     
+elif Choix == "Dashboard":
+    lien1 = pd.read_excel('data/link1_processed.xlsx')
+    lien2 = pd.read_excel('data/link2_processed.xlsx')
+    lien3 = pd.read_excel('data/link3_processed.xlsx')
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.subheader("Distribution des voitures par année")
+        fig1, ax1 = plt.subplots(figsize=(10,6))
+        ax1.hist(lien1['annee'], bins=20, color='skyblue', edgecolor='black')
+        ax1.set_title("Distribution des voitures par année")
+        ax1.set_xlabel("Année")
+        ax1.set_ylabel("Nombre de voitures")
+        st.pyplot(fig1)
