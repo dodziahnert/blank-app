@@ -241,8 +241,9 @@ elif Choix == "Dashboard":
     lien1 = pd.read_excel('data/link1_processed.xlsx')
     lien2 = pd.read_excel('data/link2_processed.xlsx')
     lien3 = pd.read_excel('data/link3_processed.xlsx')
-    col1, col2, col3 = st.columns(3)
     st.subheader("Distribution des voitures par année")
+    col1, col2, col3 = st.columns(3)
+    
     with col1:
         st.subheader("")
         st.write("Lien 1")
@@ -256,18 +257,18 @@ elif Choix == "Dashboard":
     with col2:
         st.write("Lien 2")
         fig2, ax2 = plt.subplots(figsize=(20,12))
-        ax1.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
-        ax1.set_title("Distribution des voitures par année")
-        ax1.set_xlabel("Année")
-        ax1.set_ylabel("Nombre de voitures")
+        ax2.hist(lien2['annee'], bins=20, color='skyblue', edgecolor='black')
+        ax2.set_title("Distribution des voitures par année")
+        ax2.set_xlabel("Année")
+        ax2.set_ylabel("Nombre de voitures")
         st.pyplot(fig2)
 
     with col3:
         #st.subheader("Distribution des voitures par année")
         st.write("Lien 3")
         fig3, ax3 = plt.subplots(figsize=(20,12))
-        ax1.hist(lien3['annee'], bins=20, color='skyblue', edgecolor='black')
-        ax1.set_title("Distribution des voitures par année")
-        ax1.set_xlabel("Année")
-        ax1.set_ylabel("Nombre de voitures")
+        ax3.hist(lien3['annee'], bins=20, color='skyblue', edgecolor='black')
+        ax3.set_title("Distribution des voitures par année")
+        ax3.set_xlabel("Année")
+        ax3.set_ylabel("Nombre de voitures")
         st.pyplot(fig3)
